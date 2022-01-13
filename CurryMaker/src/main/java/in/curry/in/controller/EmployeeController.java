@@ -61,6 +61,7 @@ public class EmployeeController {
 			e.printStackTrace();
 		}
 		log.info("About to Leave Save method");
+		System.out.println("New line added");
 		return "EmployeeRegister";
 	}
 
