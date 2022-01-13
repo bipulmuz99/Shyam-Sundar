@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<!-- Menubar start -->
+<nav class="navbar navbar-expand-lg navbar-light bg-info">
+  <a class="navbar-brand text-white" href="#">CURRY APP</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      
+      <li class="nav-item">
+        <a class="nav-link text-white" th:href="@{/curry/register}">MIX CURRY</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" th:href="@{/curry/all}">VIEW ALL</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Menubar end -->
+
+	<div class="container">
+
+		<div class="card">
+			<div class="card-header bg-primary text-white text-center">
+				<h2>CURRY MIXTURE PAGE</h2>
+
+			</div>
+
+
+			<div class="card-body">
+				<form th:action="@{/curry/update}" method="POST" th:object="${employee}">
+
+					<div class="row">
+						<div class="col-3">
+							<label>ID</label>
+						</div>
+						<div class="col-4">
+							<input type="text" th:field="*{empId}" class="form-control" readOnly/>
+						</div>
+						<div class="col-5">
+							<span id="Error"></span>
+						</div>
+					</div>
+
+
+					<div class="row">
+						<div class="col-3">
+							<label>DAL</label>
+						</div>
+						<div class="col-4">
+							<input type="text" th:field="*{empDal}" class="form-control" required/>
+						</div>
+						<div class="col-5">
+							<span id="Error"></span>
+						</div>
+					</div>
+
+
+					<div class="row">
+						<div class="col-3">
+							<label>MASHALA</label>
+						</div>
+						<div class="col-4">
+							<input type="text" th:field="*{empMashala}" class="form-control" required/>
+						</div>
+						<div class="col-5">
+							<span id="Error"></span>
+						</div>
+					</div>
+					
+					
+					<div class="row">
+						<div class="col-3">
+							<label>PATATO</label>
+						</div>
+						<div class="col-4">
+							<input type="text" th:field="*{empPatato}" class="form-control" required/>
+						</div>
+						<div class="col-5">
+							<span id="Error"></span>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-3">
+							<label>SALT</label>
+						</div>
+						<div class="col-4">
+							<input type="text" th:field="*{empSalt}" class="form-control" required/>
+						</div>
+						<div class="col-5">
+							<span id="Error"></span>
+						</div>
+					</div>
+					
+					
+					<div class="row">
+						<div class="col-3">
+							<label>WATER</label>
+						</div>
+						<div class="col-4">
+							<input type="text" th:field="*{empWater}" class="form-control" required/>
+						</div>
+						<div class="col-5">
+							<span id="Error"></span>
+						</div>
+					</div>
+
+					<input type="submit" value="Update Curry Details" class="btn btn-success"/>
+				</form>
+			</div>
+
+		</div>
+		<!-- card end -->
+
+	</div>
+	<!-- container End -->
+</body>
+</html>

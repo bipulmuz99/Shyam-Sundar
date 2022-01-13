@@ -1,0 +1,74 @@
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<!-- Menubar start -->
+<nav class="navbar navbar-expand-lg navbar-light bg-info">
+  <a class="navbar-brand text-white" href="#">CURRY APP</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      
+      <li class="nav-item">
+        <a class="nav-link text-white" th:href="@{/curry/register}">MIX CURRY</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" th:href="@{/curry/all}">VIEW ALL</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Menubar end -->
+
+	<div class="container">
+
+		<div class="card">
+			<div class="card-header bg-primary text-white text-center">
+				<h2>CURRY MIXTURE PAGE</h2>
+
+			</div>
+
+			<div class="card-body">
+				<!-- <a th:href="@{/employee/register}" class="btn btn-success"> >> ADD EMPLOYEE >> </a> -->
+				<table class="table table-hover">
+					<tr class="bg-info text-white">
+						<th>ID</th>
+						<th>DAL</th>
+						<th>MASHALA</th>
+						<th>PATATO</th>
+						<th>SALT</th>
+						<th>WATER</th>
+						<th>OPERATIONS</th>
+					</tr>
+					<tr th:each="ob:${list}">
+						<td th:text="${ob.empId}"></td>
+						<td th:text="${ob.empDal}"></td>
+						<td th:text="${ob.empMashala}"></td>
+						<td th:text="${ob.empPatato}"></td>
+						<td th:text="${ob.empSalt}"></td>
+						<td th:text="${ob.empWater}"></td>
+						<td><a th:href="@{/curry/delete(id=${ob.empId})}" class="btn btn-danger">DELETE</a> |
+						<a th:href="@{/curry/edit(id=${ob.empId})}" class="btn btn-success">EDIT</a></td>
+					</tr>
+				</table>
+			</div>
+
+			<div th:if="${msg!=null}" class="card-footer bg-info text-white">
+				<span th:text="${msg}"></span>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+
+		<div class="card">
+			<div class="card-header bg-primary text-white text-center">
+				<h2>CURRY DETAILS NOT EXIST</h2>
+			</div>
+			<div class="card-body">
+				<img th:src="@{/images/404.jpg}" width="1000" height="600" /><br>
+				Goto <a th:href="@{/curry/all}"> 
+				<img th:src="@{/images/home.png}" width="20" height="25"/> 
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+
+</body>
+</html>
